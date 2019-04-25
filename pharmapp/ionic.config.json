@@ -1,5 +1,7 @@
 {
   "name": "pharmapp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
