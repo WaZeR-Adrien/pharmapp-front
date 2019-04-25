@@ -1,1 +1,1 @@
-"# pharmapp" 
+Run app : ionic serve
