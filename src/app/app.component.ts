@@ -14,6 +14,11 @@ export class AppComponent {
       title: 'Home',
       url: '',
       icon: 'home'
+    },
+    {
+      title: 'Calculatrice',
+      url: '/calc',
+      icon: 'calculator'
     }
   ];
 
