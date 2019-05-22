@@ -25,7 +25,7 @@
 
                     <ion-card>
                         <ion-card-header>
-                          <ion-card-title>Taux de remise</ion-card-title>
+                          <ion-card-title class="centerTitle">Taux de remise</ion-card-title>
                         </ion-card-header>
                                 <ion-item>
                                 <ion-label position="floating">Prix d'achat Brut</ion-label>
@@ -36,52 +36,26 @@
                                 <ion-input type="text" required [(ngModel)]="achnet"></ion-input>
                                 </ion-item>
                                 <br>
-                                <ion-button type="submit" (click)="tauxForm()">Valider</ion-button>
-                                <p>Votre taux de remise est de : {{ result1 }}%</p>   
+                                <ion-grid>
+                                    <ion-row>
+                                    <ion-col></ion-col>
+                                    <ion-col>
+                                      <ion-button type="submit" (click)="tauxForm()">Valider</ion-button>
+                                    </ion-col>
+                                    <ion-col></ion-col>
+                                  </ion-row>
+                                </ion-grid>
+                                  <p class="centerTitle">Votre taux de remise est de : {{ result1 }}%</p>
+                                  
+ 
+
                       </ion-card>
                    
-                </section>
-              
+                    </section>
                 <section id="content2">
                     <ion-card>
                         <ion-card-header>
-                          <ion-card-title>Coefficient multiplicateur</ion-card-title>
-                        </ion-card-header>
-                            <ion-item>
-                                <ion-label position="floating">Prix de vente Net</ion-label>
-                                <ion-input type="text" required [(ngModel)]="ventenet"></ion-input>
-                              </ion-item>
-                              <ion-item>
-                                  <ion-label position="floating">Prix d'achat Net</ion-label>
-                                  <ion-input type="text" required [(ngModel)]="achnet"></ion-input>
-                              </ion-item>
-                              <br>
-                            <ion-button type="submit" (click)="coeffMulti()">Valider</ion-button>
-                      </ion-card>
-                </section>
-              
-                <section id="content3">
-                    <ion-card>
-                        <ion-card-header>
-                          <ion-card-title>Prix d'achat Net</ion-card-title>
-                        </ion-card-header>
-                            <ion-item>
-                                <ion-label position="floating">Prix d'achat Net</ion-label>
-                                <ion-input type="text" required [(ngModel)]="achnet"></ion-input>
-                                </ion-item>
-                                <ion-item>
-                                <ion-label position="floating">Coefficient multiplicateur</ion-label>
-                                <ion-input type="text" required [(ngModel)]="coeff"></ion-input>
-                                </ion-item>
-                                <br>
-                                <ion-button type="submit" (click)="prixVentenet()">Valider</ion-button>
-                      </ion-card>
-                </section>
-              
-                <section id="content4">
-                    <ion-card>
-                        <ion-card-header>
-                          <ion-card-title>Prix d'achat Net</ion-card-title>
+                          <ion-card-title class="centerTitle">Prix d'achat Net</ion-card-title>
                         </ion-card-header>
                             <ion-item>
                             <ion-label position="floating">Prix d'achat Brut</ion-label>
@@ -92,11 +66,73 @@
                             <ion-input type="text" required [(ngModel)]="remise"></ion-input>
                             </ion-item>
                             <br>
-                            <ion-button type="submit" (click)="prixAchnet()">Valider</ion-button>
-         
+                            <ion-grid>
+                                <ion-row>
+                                <ion-col></ion-col>
+                                <ion-col>
+                                  <ion-button type="submit" (click)="prixAchnet()">Valider</ion-button>
+                                </ion-col>
+                                <ion-col></ion-col>
+                              </ion-row>
+                            </ion-grid>
+
+                            <p class="centerTitle">Votre prix d'achat net est de : {{ result2 }}€</p>
                       </ion-card>
                 </section>
-              
+                <section id="content3">
+                    <ion-card>
+                        <ion-card-header>
+                          <ion-card-title class="centerTitle">Prix de vente Net</ion-card-title>
+                        </ion-card-header>
+                            <ion-item>
+                                <ion-label position="floating">Prix d'achat Net</ion-label>
+                                <ion-input type="text" required [(ngModel)]="achnet"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                <ion-label position="floating">Coefficient multiplicateur</ion-label>
+                                <ion-input type="text" required [(ngModel)]="coeff"></ion-input>
+                                </ion-item>
+                                <br>
+                                <ion-grid>
+                                    <ion-row>
+                                    <ion-col></ion-col>
+                                    <ion-col>
+                                      <ion-button type="submit" (click)="prixVentenet()">Valider</ion-button>
+                                    </ion-col>
+                                    <ion-col></ion-col>
+                                  </ion-row>
+                                </ion-grid>
+
+                                <p class="centerTitle">Votre prix de vente net est de : {{ result3 }}€</p>
+                      </ion-card>
+                </section>
+                <section id="content4">
+                    <ion-card class="centerForm">
+                        <ion-card-header>
+                          <ion-card-title class="centerTitle">Coefficient multiplicateur</ion-card-title>
+                        </ion-card-header>
+                            <ion-item>
+                                <ion-label position="floating">Prix de vente Net</ion-label>
+                                <ion-input type="text" required [(ngModel)]="ventenet"></ion-input>
+                              </ion-item>
+                              <ion-item>
+                                  <ion-label position="floating">Prix d'achat Net</ion-label>
+                                  <ion-input type="text" required [(ngModel)]="achnet"></ion-input>
+                              </ion-item>
+                              <br>
+                              <ion-grid>
+                                  <ion-row>
+                                  <ion-col></ion-col>
+                                  <ion-col>
+                                    <ion-button type="submit" (click)="coeffMulti()">Valider</ion-button>
+                                  </ion-col>
+                                  <ion-col></ion-col>
+                                </ion-row>
+                              </ion-grid>
+
+                            <p class="centerTitle">Votre coefficient multiplicateur est : {{ result4 }}</p>
+                      </ion-card>
+                </section>
               </main>
 
     </ion-content>

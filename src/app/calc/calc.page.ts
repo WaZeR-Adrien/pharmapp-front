@@ -12,6 +12,9 @@ export class CalcPage implements OnInit {
   remise:string;
   coeff:string;
   result1:number;
+  result2:number;
+  result3:number;
+  result4:number;
 
   constructor() { }
 
@@ -19,19 +22,18 @@ export class CalcPage implements OnInit {
   }
 
   tauxForm(){
-    this.result1 =  (1-parseFloat(this.achnet)/parseFloat(this.achbrut))*100;
-    console.log();
+    this.result1 = (1-parseFloat(this.achnet)/parseFloat(this.achbrut))*100;
   }
   
   prixAchnet(){
-    console.log(parseFloat(this.achbrut)*(1-parseFloat(this.remise)));
+    this.result2 = (parseFloat(this.achbrut)*(1-parseFloat(this.remise)));
   }
 
   prixVentenet(){
-    console.log(parseFloat(this.achnet)*parseFloat(this.coeff));
+    this.result3 = (parseFloat(this.achnet)*parseFloat(this.coeff));
   }
 
   coeffMulti(){
-    console.log(parseFloat(this.venteNet)*(1-parseFloat(this.achnet)));
+    this.result4 = (parseFloat(this.venteNet)*(1-parseFloat(this.achnet)));
   }
 }
