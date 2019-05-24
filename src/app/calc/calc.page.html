@@ -1,144 +1,142 @@
 <ion-header>
     <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Module Calculatrice</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Module Calculatrice</ion-title>
     </ion-toolbar>
-  </ion-header>
-  <ion-content>
-            <main>
+</ion-header>
+<ion-content>
+    <main>
 
-                <input id="tab1" type="radio" name="tabs" checked>
-                <label for="tab1">Taux de remise</label>
-              
-                <input id="tab2" type="radio" name="tabs">
-                <label for="tab2">Dribbble</label>
-              
-                <input id="tab3" type="radio" name="tabs">
-                <label for="tab3">Stack Overflow</label>
-              
-                <input id="tab4" type="radio" name="tabs">
-                <label for="tab4">Bitbucket</label>
-              
-                <section id="content1">
+        <input id="tab1" type="radio" name="tabs" checked>
+        <label for="tab1">Taux de remise</label>
 
-                    <ion-card>
-                        <ion-card-header>
-                          <ion-card-title class="centerTitle">Taux de remise</ion-card-title>
-                        </ion-card-header>
-                                <ion-item>
-                                <ion-label position="floating">Prix d'achat Brut</ion-label>
-                                <ion-input type="text" required [(ngModel)]="achbrut"></ion-input>
-                                </ion-item>
-                                <ion-item>
-                                <ion-label position="floating">Prix d'achat Net</ion-label>
-                                <ion-input type="text" required [(ngModel)]="achnet"></ion-input>
-                                </ion-item>
-                                <br>
-                                <ion-grid>
-                                    <ion-row>
-                                    <ion-col></ion-col>
-                                    <ion-col>
-                                      <ion-button type="submit" (click)="tauxForm()">Valider</ion-button>
-                                    </ion-col>
-                                    <ion-col></ion-col>
-                                  </ion-row>
-                                </ion-grid>
-                                  <p class="centerTitle">Votre taux de remise est de : {{ result1 }}%</p>
-                                  
- 
+        <input id="tab2" type="radio" name="tabs">
+        <label for="tab2">Dribbble</label>
 
-                      </ion-card>
-                   
-                    </section>
-                <section id="content2">
-                    <ion-card>
-                        <ion-card-header>
-                          <ion-card-title class="centerTitle">Prix d'achat Net</ion-card-title>
-                        </ion-card-header>
-                            <ion-item>
-                            <ion-label position="floating">Prix d'achat Brut</ion-label>
-                            <ion-input type="text" required [(ngModel)]="achbrut"></ion-input>
-                            </ion-item>
-                            <ion-item>
-                            <ion-label position="floating">Taux de remise</ion-label>
-                            <ion-input type="text" required [(ngModel)]="remise"></ion-input>
-                            </ion-item>
-                            <br>
-                            <ion-grid>
-                                <ion-row>
-                                <ion-col></ion-col>
-                                <ion-col>
-                                  <ion-button type="submit" (click)="prixAchnet()">Valider</ion-button>
-                                </ion-col>
-                                <ion-col></ion-col>
-                              </ion-row>
-                            </ion-grid>
+        <input id="tab3" type="radio" name="tabs">
+        <label for="tab3">Stack Overflow</label>
 
-                            <p class="centerTitle">Votre prix d'achat net est de : {{ result2 }}€</p>
-                      </ion-card>
-                </section>
-                <section id="content3">
-                    <ion-card>
-                        <ion-card-header>
-                          <ion-card-title class="centerTitle">Prix de vente Net</ion-card-title>
-                        </ion-card-header>
-                            <ion-item>
-                                <ion-label position="floating">Prix d'achat Net</ion-label>
-                                <ion-input type="text" required [(ngModel)]="achnet"></ion-input>
-                                </ion-item>
-                                <ion-item>
-                                <ion-label position="floating">Coefficient multiplicateur</ion-label>
-                                <ion-input type="text" required [(ngModel)]="coeff"></ion-input>
-                                </ion-item>
-                                <br>
-                                <ion-grid>
-                                    <ion-row>
-                                    <ion-col></ion-col>
-                                    <ion-col>
-                                      <ion-button type="submit" (click)="prixVentenet()">Valider</ion-button>
-                                    </ion-col>
-                                    <ion-col></ion-col>
-                                  </ion-row>
-                                </ion-grid>
+        <input id="tab4" type="radio" name="tabs">
+        <label for="tab4">Bitbucket</label>
 
-                                <p class="centerTitle">Votre prix de vente net est de : {{ result3 }}€</p>
-                      </ion-card>
-                </section>
-                <section id="content4">
-                    <ion-card class="centerForm">
-                        <ion-card-header>
-                          <ion-card-title class="centerTitle">Coefficient multiplicateur</ion-card-title>
-                        </ion-card-header>
-                            <ion-item>
-                                <ion-label position="floating">Prix de vente Net</ion-label>
-                                <ion-input type="text" required [(ngModel)]="ventenet"></ion-input>
-                              </ion-item>
-                              <ion-item>
-                                  <ion-label position="floating">Prix d'achat Net</ion-label>
-                                  <ion-input type="text" required [(ngModel)]="achnet"></ion-input>
-                              </ion-item>
-                              <br>
-                              <ion-grid>
-                                  <ion-row>
-                                  <ion-col></ion-col>
-                                  <ion-col>
-                                    <ion-button type="submit" (click)="coeffMulti()">Valider</ion-button>
-                                  </ion-col>
-                                  <ion-col></ion-col>
-                                </ion-row>
-                              </ion-grid>
+        <section id="content1">
 
-                            <p class="centerTitle">Votre coefficient multiplicateur est : {{ result4 }}</p>
-                      </ion-card>
-                </section>
-              </main>
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title class="centerTitle">Taux de remise</ion-card-title>
+                </ion-card-header>
+                <ion-item>
+                    <ion-label position="floating">Prix d'achat Brut</ion-label>
+                    <ion-input type="text" required [(ngModel)]="achbrut"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Prix d'achat Net</ion-label>
+                    <ion-input type="text" required [(ngModel)]="achnet"></ion-input>
+                </ion-item>
+                <br>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col></ion-col>
+                        <ion-col>
+                            <ion-button type="submit" (click)="tauxForm()">Valider</ion-button>
+                        </ion-col>
+                        <ion-col></ion-col>
+                    </ion-row>
+                </ion-grid>
+                <p class="centerTitle">Votre taux de remise est de : {{ result1 }}%</p>
 
-    </ion-content>
+
+            </ion-card>
+
+        </section>
+        <section id="content2">
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title class="centerTitle">Prix d'achat Net</ion-card-title>
+                </ion-card-header>
+                <ion-item>
+                    <ion-label position="floating">Prix d'achat Brut</ion-label>
+                    <ion-input type="text" required [(ngModel)]="achbrut"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Taux de remise</ion-label>
+                    <ion-input type="text" required [(ngModel)]="remise"></ion-input>
+                </ion-item>
+                <br>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col></ion-col>
+                        <ion-col>
+                            <ion-button type="submit" (click)="prixAchnet()">Valider</ion-button>
+                        </ion-col>
+                        <ion-col></ion-col>
+                    </ion-row>
+                </ion-grid>
+
+                <p class="centerTitle">Votre prix d'achat net est de : {{ result2 }}€</p>
+            </ion-card>
+        </section>
+        <section id="content3">
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title class="centerTitle">Prix de vente Net</ion-card-title>
+                </ion-card-header>
+                <ion-item>
+                    <ion-label position="floating">Prix d'achat Net</ion-label>
+                    <ion-input type="text" required [(ngModel)]="achnet"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Coefficient multiplicateur</ion-label>
+                    <ion-input type="text" required [(ngModel)]="coeff"></ion-input>
+                </ion-item>
+                <br>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col></ion-col>
+                        <ion-col>
+                            <ion-button type="submit" (click)="prixVentenet()">Valider</ion-button>
+                        </ion-col>
+                        <ion-col></ion-col>
+                    </ion-row>
+                </ion-grid>
+
+                <p class="centerTitle">Votre prix de vente net est de : {{ result3 }}€</p>
+            </ion-card>
+        </section>
+        <section id="content4">
+            <ion-card class="centerForm">
+                <ion-card-header>
+                    <ion-card-title class="centerTitle">Coefficient multiplicateur</ion-card-title>
+                </ion-card-header>
+                <ion-item>
+                    <ion-label position="floating">Prix de vente Net</ion-label>
+                    <ion-input type="text" required [(ngModel)]="ventenet"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Prix d'achat Net</ion-label>
+                    <ion-input type="text" required [(ngModel)]="achnet"></ion-input>
+                </ion-item>
+                <br>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col></ion-col>
+                        <ion-col>
+                            <ion-button type="submit" (click)="coeffMulti()">Valider</ion-button>
+                        </ion-col>
+                        <ion-col></ion-col>
+                    </ion-row>
+                </ion-grid>
+
+                <p class="centerTitle">Votre coefficient multiplicateur est : {{ result4 }}</p>
+            </ion-card>
+        </section>
+    </main>
+
+</ion-content>
 
 
   
     
   
-    
