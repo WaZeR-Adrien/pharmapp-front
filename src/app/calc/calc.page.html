@@ -13,13 +13,13 @@
         <label for="tab1">Taux de remise</label>
 
         <input id="tab2" type="radio" name="tabs">
-        <label for="tab2">Dribbble</label>
+        <label for="tab2">Prix d'achat Net</label>
 
         <input id="tab3" type="radio" name="tabs">
-        <label for="tab3">Stack Overflow</label>
+        <label for="tab3">Prix de vente Net</label>
 
         <input id="tab4" type="radio" name="tabs">
-        <label for="tab4">Bitbucket</label>
+        <label for="tab4">Coefficient multiplicateur</label>
 
         <section id="content1">
 
@@ -45,11 +45,9 @@
                         <ion-col></ion-col>
                     </ion-row>
                 </ion-grid>
+                
                 <p class="centerTitle">Votre taux de remise est de : {{ result1 ? result1 : '-- ' }} %</p>
-
-
             </ion-card>
-
         </section>
         <section id="content2">
             <ion-card>
@@ -133,7 +131,6 @@
             </ion-card>
         </section>
     </main>
-
 </ion-content>
 
 
