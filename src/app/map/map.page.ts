@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-
-const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+import { ApiClientService } from '../api-client/api-client.service';
+import { ContactService } from '../contact/contact.service';
+import { Contact } from '../contact/contact';
+import { getComponentDef } from '@angular/core/src/render3/definition';
+import { getOrCreateNodeInjectorForNode } from '@angular/core/src/render3/di';
 
 @Component({
-    selector: 'app-map',
-    templateUrl: './map.page.html',
-    styleUrls: ['./map.page.scss'],
+  selector: 'app-map',
+  templateUrl: './map.page.html',
+  styleUrls: ['./map.page.scss'],
 })
-
 export class MapPage implements OnInit {
   contacts: Contact[];
 
@@ -18,9 +20,7 @@ export class MapPage implements OnInit {
       
         console.log(contacts);
         contacts.forEach(function(element){
-          geocoder.geocode("'"+element.ADRESSE+" "+element.CP+" "+element.VILLE+"'", function ( err, data ) {
-            console.log(data);
-          })
+
         })
     }, err => {
 
