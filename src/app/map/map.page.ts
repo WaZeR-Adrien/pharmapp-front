@@ -1,16 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiClientService } from '../api-client/api-client.service';
-import { ContactService } from '../contact/contact.service';
-import { Contact } from '../contact/contact';
-import { getComponentDef } from '@angular/core/src/render3/definition';
-import { getOrCreateNodeInjectorForNode } from '@angular/core/src/render3/di';
-var geocoder = require('geocoder');
+
+const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 
 @Component({
-  selector: 'app-map',
-  templateUrl: './map.page.html',
-  styleUrls: ['./map.page.scss'],
+    selector: 'app-map',
+    templateUrl: './map.page.html',
+    styleUrls: ['./map.page.scss'],
 })
+
 export class MapPage implements OnInit {
   contacts: Contact[];
 
