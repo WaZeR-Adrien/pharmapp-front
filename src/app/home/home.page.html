@@ -1,26 +1,31 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Accueil</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Accueil</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content  padding class="getstart">
+<ion-content padding class="getstart">
     <ion-card>
         <ion-card-content>
-          <ion-row>
-            <ion-col col-2>
-              <img src="assets/logo.png" />
-            </ion-col>
-            <ion-col col-10 class="marquee"><ion-title><marquee>Bienvenue sur PHARMAPP !</marquee></ion-title></ion-col>
-          </ion-row>
-          <br>
-          <hr>
-          <br>
-              Pour accéder aux différents modules de calcul, utilisé le menu en haut à gauche et sélectionner le module Calculatrice
+            <ion-row>
+                <ion-col col-2>
+                    <img src="assets/logo.png"/>
+                </ion-col>
+                <ion-col col-10 class="marquee">
+                    <ion-title>
+                        <marquee>Bienvenue sur PHARMAPP !</marquee>
+                    </ion-title>
+                </ion-col>
+            </ion-row>
+            <hr>
+            Pour accéder aux différents modules de calcul, utilisé le menu en haut à gauche et sélectionner le module
+            Calculatrice
+            <hr>
+            <app-login></app-login>
         </ion-card-content>
-      </ion-card>
+    </ion-card>
 
 </ion-content>
