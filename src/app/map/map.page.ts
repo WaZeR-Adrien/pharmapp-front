@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 
@@ -9,15 +9,21 @@ const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 })
 
 export class MapPage implements OnInit {
+  contacts: Contact[];
 
-    constructor() {
-    }
+  constructor(private contactService: ContactService) { }
 
-    ngOnInit() {
-        mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nZWx0b3Vzc2FpbnQiLCJhIjoiY2p2cDBnemR6MXhnbjRhbnpvNGU0Ync2MCJ9.hSDPzS6Lh9ZJGSkalwBFRQ';
-        const map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11'
-        });
-    }
+  ngOnInit() {
+    this.contactService.getAll().subscribe(contacts =>{
+      
+        console.log(contacts);
+        contacts.forEach(function(element){
+          geocoder.geocode("'"+element.ADRESSE+" "+element.CP+" "+element.VILLE+"'", function ( err, data ) {
+            console.log(data);
+          })
+        })
+    }, err => {
+
+    });
+  }
 }
