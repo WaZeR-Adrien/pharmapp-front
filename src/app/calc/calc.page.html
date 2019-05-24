@@ -45,7 +45,7 @@
                         <ion-col></ion-col>
                     </ion-row>
                 </ion-grid>
-                <p class="centerTitle">Votre taux de remise est de : {{ result1 }}%</p>
+                <p class="centerTitle">Votre taux de remise est de : {{ result1 ? result1 : '-- ' }} %</p>
 
 
             </ion-card>
@@ -75,7 +75,7 @@
                     </ion-row>
                 </ion-grid>
 
-                <p class="centerTitle">Votre prix d'achat net est de : {{ result2 }}€</p>
+                <p class="centerTitle">Votre prix d'achat net est de : {{ result2 ? result2 : '-- ' }} €</p>
             </ion-card>
         </section>
         <section id="content3">
@@ -102,7 +102,7 @@
                     </ion-row>
                 </ion-grid>
 
-                <p class="centerTitle">Votre prix de vente net est de : {{ result3 }}€</p>
+                <p class="centerTitle">Votre prix de vente net est de : {{ result3 ? result3 : '-- ' }} €</p>
             </ion-card>
         </section>
         <section id="content4">
@@ -129,7 +129,7 @@
                     </ion-row>
                 </ion-grid>
 
-                <p class="centerTitle">Votre coefficient multiplicateur est : {{ result4 }}</p>
+                <p class="centerTitle">Votre coefficient multiplicateur est : {{ result4 ? result4 : '-- ' }}</p>
             </ion-card>
         </section>
     </main>

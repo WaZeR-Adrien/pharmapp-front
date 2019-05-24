@@ -26,7 +26,7 @@ export class CalcPage implements OnInit {
   }
 
   prixAchnet() {
-    this.result2 = (parseFloat(this.achbrut) * (1 - parseFloat(this.remise)));
+    this.result2 = (parseFloat(this.achbrut) * (1 - (parseFloat(this.remise) / 100)));
   }
 
   prixVentenet() {
