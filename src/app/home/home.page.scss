@@ -9,3 +9,5 @@ hr {
   margin: 20px 0;
   width: 100%;
 }
+
+hr:first-child {margin-top: 0!important;}

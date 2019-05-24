@@ -7,11 +7,11 @@ import {Auth} from './auth';
 })
 export class AuthService extends ApiClientService {
 
-    login(email: string, mdp: string) {
+    login(email: string, password: string) {
         return new Promise<Auth>((resolve, reject) => {
 
             this.body = {
-                email, mdp
+                EMAIL: email, MDP: password
             };
 
             return this.call<any>('POST', '/auth')
