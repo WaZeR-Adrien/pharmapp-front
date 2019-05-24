@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiClientService } from '../api-client/api-client.service';
+import { ContactService } from '../contact/contact.service';
+import { Contact } from '../contact/contact';
+import { getComponentDef } from '@angular/core/src/render3/definition';
+import { getOrCreateNodeInjectorForNode } from '@angular/core/src/render3/di';
+var geocoder = require('geocoder');
 
 @Component({
   selector: 'app-map',
@@ -6,10 +12,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map.page.scss'],
 })
 export class MapPage implements OnInit {
+  contacts: Contact[];
 
-  constructor() { }
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
-  }
+    this.contactService.getAll().subscribe(contacts =>{
+      
+        console.log(contacts);
+        contacts.forEach(function(element){
+          geocoder.geocode("'"+element.ADRESSE+" "+element.CP+" "+element.VILLE+"'", function ( err, data ) {
+            console.log(data);
+          })
+        })
+    }, err => {
 
+    });
+  }
 }
