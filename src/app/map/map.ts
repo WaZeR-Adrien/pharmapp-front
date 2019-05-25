@@ -1,13 +1,13 @@
 export interface IGeometry {
     type: string;
-    coordinates: number[];
+    coordinates: any[];
 }
 
 export interface IGeoJson {
     type: string;
     geometry: IGeometry;
     properties?: any;
-    $key?: string;
+    key?: string;
 }
 
 export class GeoJson implements IGeoJson {

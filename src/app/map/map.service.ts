@@ -6,6 +6,6 @@ import {environment} from '../../environments/environment';
 export class MapService {
 
     constructor() {
-        mapboxgl.accessToken = environment.accessToken;
+        (mapboxgl as typeof mapboxgl).accessToken = environment.accessToken;
     }
 }
