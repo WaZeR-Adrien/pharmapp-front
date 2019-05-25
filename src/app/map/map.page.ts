@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-
-const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+import * as mapboxgl from 'mapbox-gl';
+import {MapService} from './map.service';
 
 @Component({
     selector: 'app-map',
@@ -9,15 +9,48 @@ const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 })
 
 export class MapPage implements OnInit {
+    /// default settings
+    map: mapboxgl.Map;
+    style = 'mapbox://styles/mapbox/outdoors-v9';
+    lat = 37.75;
+    lng = -122.41;
+    message = 'Hello World!';
 
-    constructor() {
+    // data
+    source: any;
+    markers: any;
+
+    constructor(private mapService: MapService) {
     }
 
     ngOnInit() {
-        mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nZWx0b3Vzc2FpbnQiLCJhIjoiY2p2cDBnemR6MXhnbjRhbnpvNGU0Ync2MCJ9.hSDPzS6Lh9ZJGSkalwBFRQ';
-        const map = new mapboxgl.Map({
+        this.initializeMap();
+    }
+
+    private initializeMap() {
+        /// locate the user
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                this.lat = position.coords.latitude;
+                this.lng = position.coords.longitude;
+                this.map.flyTo({
+                    center: [this.lng, this.lat]
+                });
+            });
+        }
+        this.buildMap();
+    }
+
+    buildMap() {
+        this.map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11'
+            style: this.style,
+            zoom: 13,
+            center: [this.lng, this.lat]
         });
+
+
+        /// Add map controls
+        this.map.addControl(new mapboxgl.NavigationControl());
     }
 }
