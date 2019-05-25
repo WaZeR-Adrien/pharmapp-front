@@ -4,7 +4,7 @@
 
 export const environment = {
     accessToken: 'pk.eyJ1IjoiYW5nZWx0b3Vzc2FpbnQiLCJhIjoiY2p2cDBnemR6MXhnbjRhbnpvNGU0Ync2MCJ9.hSDPzS6Lh9ZJGSkalwBFRQ'
-  apiUrl: "http://127.0.0.1:3000"
+    apiUrl: 'http://127.0.0.1:3000',
     production: false,
 };
 
