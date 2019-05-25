@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../auth/auth.service';
+import {Globals} from '../globals';
 
 @Component({
     selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
     email: string;
     password: string;
 
-    constructor(private authService: AuthService) {
+    constructor(private authService: AuthService, private globals: Globals) {
     }
 
     ngOnInit() {
@@ -19,8 +20,9 @@ export class LoginComponent implements OnInit {
 
     login() {
         this.authService.login(this.email, this.password).then(auth => {
-            localStorage.setItem('token', auth.TOKEN);
-            localStorage.setItem('user', auth.PERSONNE);
+            localStorage.setItem('auth', JSON.stringify(auth));
+
+            this.globals.auth = auth;
         });
     }
 }
