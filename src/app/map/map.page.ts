@@ -12,9 +12,8 @@ export class MapPage implements OnInit {
     /// default settings
     map: mapboxgl.Map;
     style = 'mapbox://styles/mapbox/outdoors-v9';
-    lat = 37.75;
-    lng = -122.41;
-    message = 'Hello World!';
+    lat = 48.8583;
+    lng = 2.294499999999971;
 
     // data
     source: any;
@@ -45,12 +44,11 @@ export class MapPage implements OnInit {
         this.map = new mapboxgl.Map({
             container: 'map',
             style: this.style,
-            zoom: 13,
+            zoom: 15,
             center: [this.lng, this.lat]
         });
 
-
         /// Add map controls
-        this.map.addControl(new mapboxgl.NavigationControl());
+        this.map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
     }
 }
