@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import {MapService} from './map.service';
+import {GeoJson} from "./map";
 
 @Component({
     selector: 'app-map',
@@ -35,6 +36,10 @@ export class MapPage implements OnInit {
                 this.map.flyTo({
                     center: [this.lng, this.lat]
                 });
+                this.markers = new mapboxgl.Marker()
+                    .setLngLat([this.lng, this.lat])
+                    .addTo(this.map);
+
             });
         }
         this.buildMap();
