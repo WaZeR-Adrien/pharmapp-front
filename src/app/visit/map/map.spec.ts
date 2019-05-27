@@ -1,4 +1,4 @@
-import { Map } from 'map';
+import { Map } from '';
 
 describe('Map', () => {
   it('should create an instance', () => {

@@ -5,13 +5,13 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {IonicModule} from '@ionic/angular';
 
-import {MapPage} from './map.page';
-import {MapService} from './map.service';
+import {VisitPage} from './visit.page';
+import {MapService} from './map/map.service';
 
 const routes: Routes = [
     {
         path: '',
-        component: MapPage
+        component: VisitPage
     }
 ];
 
@@ -22,7 +22,7 @@ const routes: Routes = [
         IonicModule,
         RouterModule.forChild(routes)
     ],
-    declarations: [MapPage],
+    declarations: [VisitPage],
     providers: [MapService]
 })
 export class MapPageModule {

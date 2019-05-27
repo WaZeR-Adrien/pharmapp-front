@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
-import {MapService} from './map.service';
-import {GeoJson} from "./map";
+import {MapService} from './map/map.service';
+import {GeoJson} from "./map/map";
 
 @Component({
     selector: 'app-map',
-    templateUrl: './map.page.html',
-    styleUrls: ['./map.page.scss'],
+    templateUrl: './visit.page.html',
+    styleUrls: ['./visit.page.scss'],
 })
 
-export class MapPage implements OnInit {
+export class VisitPage implements OnInit {
     /// default settings
     map: mapboxgl.Map;
     style = 'mapbox://styles/mapbox/outdoors-v9';
