@@ -6,24 +6,16 @@ import {Routes, RouterModule} from '@angular/router';
 import {IonicModule} from '@ionic/angular';
 
 import {VisitPage} from './visit.page';
-import {MapService} from './map/map.service';
-
-const routes: Routes = [
-    {
-        path: '',
-        component: VisitPage
-    }
-];
+import {VisitPageRoutingModule} from './visit-routing.module';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         IonicModule,
-        RouterModule.forChild(routes)
+        VisitPageRoutingModule
     ],
-    declarations: [VisitPage],
-    providers: [MapService]
+    declarations: [VisitPage]
 })
-export class MapPageModule {
+export class VisitPageModule {
 }
