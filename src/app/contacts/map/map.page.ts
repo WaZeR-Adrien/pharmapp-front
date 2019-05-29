@@ -1,23 +1,21 @@
 import {Component, OnInit} from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
-import {MapService} from './map.service';
-import {GeoJson} from "./map";
+import {MapService} from '../../contacts/map/map.service';
 
 @Component({
-    selector: 'app-map',
-    templateUrl: './map.page.html',
-    styleUrls: ['./map.page.scss'],
+    selector: 'app-tab1',
+    templateUrl: 'map.page.html',
+    styleUrls: ['map.page.scss']
 })
-
 export class MapPage implements OnInit {
-    /// default settings
+
+    // default settings
     map: mapboxgl.Map;
     style = 'mapbox://styles/mapbox/outdoors-v9';
     lat = 48.8583;
     lng = 2.294499999999971;
 
     // data
-    source: any;
     markers: any;
 
     constructor(private mapService: MapService) {
@@ -56,4 +54,5 @@ export class MapPage implements OnInit {
         /// Add map controls
         this.map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
     }
+
 }

@@ -11,8 +11,7 @@ describe('MapPage', () => {
         TestBed.configureTestingModule({
             declarations: [MapPage],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
-        })
-            .compileComponents();
+        }).compileComponents();
     }));
 
     beforeEach(() => {
