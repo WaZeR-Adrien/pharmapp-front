@@ -38,7 +38,6 @@ export class MapPage implements OnInit {
                 this.markers = new mapboxgl.Marker()
                     .setLngLat([this.lng, this.lat])
                     .addTo(this.map);
-
             });
         }
         this.buildMap();

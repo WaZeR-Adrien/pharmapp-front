@@ -22,11 +22,6 @@ export class AppComponent {
         },
         {
             title: 'Contacts',
-            url: '/visit/map',
-            icon: 'map'
-        },
-        {
-            title: 'Test',
             url: '/contacts',
             icon: 'map'
         }
