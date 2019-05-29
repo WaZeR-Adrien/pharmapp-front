@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
-import {MapService} from '../../visit/map/map.service';
+import {MapService} from '../../contacts/map/map.service';
 
 @Component({
     selector: 'app-tab1',
@@ -16,7 +16,6 @@ export class MapPage implements OnInit {
     lng = 2.294499999999971;
 
     // data
-    source: any;
     markers: any;
 
     constructor(private mapService: MapService) {
@@ -38,6 +37,7 @@ export class MapPage implements OnInit {
                 this.markers = new mapboxgl.Marker()
                     .setLngLat([this.lng, this.lat])
                     .addTo(this.map);
+
             });
         }
         this.buildMap();
