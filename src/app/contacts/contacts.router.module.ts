@@ -1,12 +1,11 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-
-import {VisitPage} from './visit.page';
+import {RouterModule, Routes} from '@angular/router';
+import {ContactsPage} from './contacts.page';
 
 const routes: Routes = [
     {
-        path: 'visit',
-        component: VisitPage,
+        path: 'contacts',
+        component: ContactsPage,
         children: [
             {
                 path: 'map',
@@ -18,15 +17,24 @@ const routes: Routes = [
                 ]
             },
             {
+                path: 'list',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: './list/list.module#ListPageModule'
+                    }
+                ]
+            },
+            {
                 path: '',
-                redirectTo: '/visit/map',
+                redirectTo: '/contacts/map',
                 pathMatch: 'full'
             }
         ]
     },
     {
         path: '',
-        redirectTo: '/visit/map',
+        redirectTo: '/contacts/map',
         pathMatch: 'full'
     }
 ];
@@ -37,5 +45,5 @@ const routes: Routes = [
     ],
     exports: [RouterModule]
 })
-export class VisitPageRoutingModule {
+export class ContactsPageRoutingModule {
 }
