@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Category} from './category';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.page.html',
-  styleUrls: ['./products.page.scss'],
+    selector: 'app-products',
+    templateUrl: './products.page.html',
+    styleUrls: ['./products.page.scss'],
 })
 export class ProductsPage implements OnInit {
 
-  constructor() { }
+    categories: Category[];
 
-  ngOnInit() {
-  }
+    constructor() {
+    }
+
+    ngOnInit() {
+    }
 
 }
