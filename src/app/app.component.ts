@@ -21,7 +21,7 @@ export class AppComponent {
             icon: 'calculator'
         },
         {
-            title: 'Visiter',
+            title: 'Contacts',
             url: '/visit',
             icon: 'map'
         }
