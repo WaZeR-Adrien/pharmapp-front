@@ -23,8 +23,8 @@ export class AppComponent {
             icon: 'calculator'
         },
         {
-            title: 'Visiter',
-            url: '/map',
+            title: 'Contacts',
+            url: '/contacts',
             icon: 'map'
         }
     ];
