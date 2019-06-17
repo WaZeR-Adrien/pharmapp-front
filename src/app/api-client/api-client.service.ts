@@ -28,20 +28,15 @@ export class ApiClientService {
 
         if (method === 'POST' || method === 'PUT') {
 
-            this.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+            this.headers['Content-Type'] = 'application/json';
 
-            let body = new HttpParams();
-            Object.keys(this.body).forEach(key => {
-                body = body.set(key, this.body[key]);
-            });
-
-            observable = this.http[method.toLowerCase()]<T>(environment.apiUrl + url, body.toString(), {
+            observable = this.http[method.toLowerCase()]<T>(this.apiUrl + url, this.body, {
                 headers: new HttpHeaders(this.headers)
             });
 
         } else {
 
-            observable = this.http[method.toLowerCase()]<T>(environment.apiUrl + url, {
+            observable = this.http[method.toLowerCase()]<T>(this.apiUrl + url, {
                 headers: new HttpHeaders(this.headers)
             });
 

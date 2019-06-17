@@ -1,15 +1,13 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Accueil</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Accueil</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<app-list></app-list>
-
-<ion-content  padding class="getstart">
+<ion-content padding class="getstart">
     <ion-card>
         <ion-card-content>
           <ion-row>
@@ -18,10 +16,10 @@
             </ion-col>
             <ion-col col-10 class="marquee"><ion-title><marquee>Bienvenue sur PHARMAPP !</marquee></ion-title></ion-col>
           </ion-row>
-          <br>
           <hr>
-          <br>
-              Bienvenue sur la page d'accueil. Veuillez-vous connecter pour acceder aux différents outils du menu.
+          Bienvenue sur la page d'accueil. Veuillez-vous connecter pour acceder aux différents outils du menu.
+          <hr>
+          <app-login></app-login>
         </ion-card-content>
       </ion-card>
 </ion-content>
