@@ -6,7 +6,9 @@ import {Category} from './category';
     providedIn: 'root'
 })
 export class CategoryService extends ApiClientService {
+
     getAll() {
         return this.call<Category[]>('GET', '/categories');
     }
+
 }

@@ -15,12 +15,13 @@ export class ProductsPage implements OnInit {
     }
 
     ngOnInit() {
+        this.getAll();
     }
 
     getAll() {
-      this.categoryService.getAll().then(categories => {
-          this.categories = categories;
-      });
+        this.categoryService.getAll().subscribe(categories => {
+            this.categories = categories;
+        });
     }
 
 }
