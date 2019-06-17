@@ -1,12 +1,13 @@
 <ion-list>
-  <ion-item>
-    <ion-label *ngFor="let contact of contacts"> {{
-      contact.NOM,
-      contact.PRENOM,
-      contact.EMAIL,
-      contact.ADRESSE,
-      contact.CP,
-      contact.VILLE
-      }} </ion-label>
-  </ion-item>
+    <ion-item *ngFor="let contact of contacts">
+        <ion-label> {{
+            contact.NOM,
+            contact.PRENOM,
+            contact.EMAIL,
+            contact.ADRESSE,
+            contact.CP,
+            contact.VILLE
+            }}
+        </ion-label>
+    </ion-item>
 </ion-list>
