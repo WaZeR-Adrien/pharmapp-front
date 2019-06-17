@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {ContactsPage} from '../contacts.page';
 
 @Component({
     selector: 'app-tab2',
@@ -8,8 +7,7 @@ import {ContactsPage} from '../contacts.page';
 })
 export class ListPage {
 
-    contacts: ContactsPage[];
-    constructor(private contactService: ContactService) {
+    constructor() {
     }
 
 }
