@@ -29,7 +29,7 @@ export class AppComponent {
         {
             title: 'Produits',
             url: '/products',
-            icon: 'map'
+            icon: 'list-box'
         }
     ];
 
