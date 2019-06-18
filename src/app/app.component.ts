@@ -25,6 +25,11 @@ export class AppComponent {
             title: 'Visiter',
             url: '/map',
             icon: 'map'
+        },
+        {
+            title: 'Statistiques',
+            url: '/stats',
+            icon: 'stats'
         }
     ];
 
