@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MapPage } from './map.page';
+import { StatPage } from './stat.page';
 
-describe('MapPage', () => {
-  let component: MapPage;
-  let fixture: ComponentFixture<MapPage>;
+describe('StatPage', () => {
+  let component: StatPage;
+  let fixture: ComponentFixture<StatPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MapPage ],
+      declarations: [ StatPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MapPage);
+    fixture = TestBed.createComponent(StatPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
