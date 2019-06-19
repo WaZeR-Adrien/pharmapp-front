@@ -7,6 +7,8 @@ import {Personne} from '../people/personne';
 })
 export class ContactService extends ApiClientService {
     getAll() {
+        this.setToken();
+
         return this.call<Personne[]>('GET', '/contacts');
     }
 }
