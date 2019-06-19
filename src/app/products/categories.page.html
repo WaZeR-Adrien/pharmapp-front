@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <img class="img-toolbar" src="assets/logo.png"/>
+        <ion-title class="title-toolbar">
+            Catégories
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="!categoriesDisplayed">
+        <h3 class="loading">
+            <ion-spinner name="crescent" color="secondary"></ion-spinner>
+            <ion-text color="secondary">Chargement...</ion-text>
+        </h3>
+
+        <ngx-masonry>
+            <ngxMasonryItem class="masonry-item" *ngFor="let item of [0, 1, 2, 3, 4, 5]">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+                    </ion-card-header>
+                </ion-card>
+            </ngxMasonryItem>
+        </ngx-masonry>
+    </div>
+
+    <div *ngIf="categoriesDisplayed">
+        <h3>
+            <ion-text color="secondary">Sélectionnez une catégorie</ion-text>
+        </h3>
+
+        <ngx-masonry>
+            <ngxMasonryItem class="masonry-item" *ngFor="let category of categoriesDisplayed">
+                <ion-card>
+                    <ion-card-header [routerLink]="'/products'" [queryParams]="{categoryId: category.ID}">
+                        <p>{{category.NOM}}</p>
+                    </ion-card-header>
+                </ion-card>
+            </ngxMasonryItem>
+        </ngx-masonry>
+
+        <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+            <ion-infinite-scroll-content
+                    loadingSpinner="crescent"
+                    loadingText="Chargement des autres produits...">
+            </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </div>
+</ion-content>
