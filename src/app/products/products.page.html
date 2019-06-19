@@ -32,7 +32,7 @@
 
         <ion-item *ngFor="let product of productsDisplayed | search: 'NOM': search">
             <ion-label>{{product.NOM}}</ion-label>
-            <ion-button slot="end">
+            <ion-button [routerDirection]="'root'" [routerLink]="'/calc'" [queryParams]="{prix: product.PRIX}" slot="end">
                 <ion-icon name="calculator"></ion-icon>
             </ion-button>
         </ion-item>
