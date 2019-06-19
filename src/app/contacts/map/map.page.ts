@@ -1,35 +1,28 @@
 import {Component, OnInit} from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
-import {MapService} from './map.service';
-import {ApiClientService} from '../api-client/api-client.service';
-import {ContactService} from '../contact/contact.service';
-import {Personne} from '../people/personne';
+import {MapService} from '../../contacts/map/map.service';
 
 @Component({
-    selector: 'app-map',
-    templateUrl: './map.page.html',
-    styleUrls: ['./map.page.scss'],
+    selector: 'app-tab1',
+    templateUrl: 'map.page.html',
+    styleUrls: ['map.page.scss']
 })
 export class MapPage implements OnInit {
-    /// default settings
+
+    // default settings
     map: mapboxgl.Map;
     style = 'mapbox://styles/mapbox/outdoors-v9';
     lat = 48.8583;
     lng = 2.294499999999971;
-    contacts: Personne[];
 
     // data
     markers: any;
 
-    constructor(private mapService: MapService, private contactService: ContactService) {
+    constructor(private mapService: MapService) {
     }
 
     ngOnInit() {
         this.initializeMap();
-
-        this.contactService.getAll().subscribe(contacts => {
-            this.contacts = contacts;
-        });
     }
 
     private initializeMap() {
@@ -41,6 +34,10 @@ export class MapPage implements OnInit {
                 this.map.flyTo({
                     center: [this.lng, this.lat]
                 });
+                this.markers = new mapboxgl.Marker()
+                    .setLngLat([this.lng, this.lat])
+                    .addTo(this.map);
+
             });
         }
         this.buildMap();
@@ -57,4 +54,5 @@ export class MapPage implements OnInit {
         /// Add map controls
         this.map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
     }
+
 }

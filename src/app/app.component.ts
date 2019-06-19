@@ -5,6 +5,7 @@ import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {Globals} from './globals';
 
+
 @Component({
     selector: 'app-root',
     templateUrl: 'app.component.html'
@@ -22,8 +23,8 @@ export class AppComponent {
             icon: 'calculator'
         },
         {
-            title: 'Visiter',
-            url: '/map',
+            title: 'Contacts',
+            url: '/contacts',
             icon: 'map'
         },
         {
@@ -32,7 +33,6 @@ export class AppComponent {
             icon: 'list-box'
         }
     ];
-
 
     constructor(
         private platform: Platform,

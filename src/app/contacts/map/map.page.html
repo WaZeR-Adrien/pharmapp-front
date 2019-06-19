@@ -5,16 +5,11 @@
         </ion-buttons>
         <img class="img-toolbar" src="assets/logo.png"/>
         <ion-title class="title-toolbar">
-            Accueil
+            Carte intéractive
         </ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content padding class="getstart">
-    <ion-card>
-        <ion-card-content>
-            <img class="img-toolbar" src="assets/medicament.jpg"/>
-            <app-login></app-login>
-        </ion-card-content>
-    </ion-card>
-</ion-content>
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet'/>
+
+<div id="map" class="map" style="height: 100vh; width: 100%;"></div>

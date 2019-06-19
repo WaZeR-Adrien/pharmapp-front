@@ -1,4 +1,4 @@
-export class Personne {
+export class People {
     ID: number;
     TYPE: string;
     NOM: string;

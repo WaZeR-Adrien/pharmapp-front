@@ -5,16 +5,15 @@
         </ion-buttons>
         <img class="img-toolbar" src="assets/logo.png"/>
         <ion-title class="title-toolbar">
-            Accueil
+            Liste des contacts
         </ion-title>
     </ion-toolbar>
 </ion-header>
-
-<ion-content padding class="getstart">
-    <ion-card>
-        <ion-card-content>
-            <img class="img-toolbar" src="assets/medicament.jpg"/>
-            <app-login></app-login>
-        </ion-card-content>
-    </ion-card>
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let contact of contacts">
+            <ion-label> {{contact.NOM}}
+            </ion-label>
+        </ion-item>
+    </ion-list>
 </ion-content>
