@@ -26,6 +26,11 @@ export class AppComponent {
             title: 'Contacts',
             url: '/contacts',
             icon: 'map'
+        },
+        {
+            title: 'Produits',
+            url: '/products',
+            icon: 'list-box'
         }
     ];
 
