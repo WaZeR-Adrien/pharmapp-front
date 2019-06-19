@@ -1,9 +1,14 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {ApiClientService} from '../api-client/api-client.service';
+import {Product} from './product';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
-export class ProductService {
+export class ProductService extends ApiClientService {
 
-  constructor() { }
+    getById(id: string) {
+        return this.call<Product[]>('GET', '/categories/' + id + '/products');
+    }
+
 }
