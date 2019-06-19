@@ -4,7 +4,6 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {ListPage} from './list.page';
-import {ListComponent} from "./list.component";
 
 @NgModule({
     imports: [
@@ -13,7 +12,7 @@ import {ListComponent} from "./list.component";
         FormsModule,
         RouterModule.forChild([{path: '', component: ListPage}])
     ],
-    declarations: [ListPage, ListComponent]
+    declarations: [ListPage]
 })
 export class ListPageModule {
 }
