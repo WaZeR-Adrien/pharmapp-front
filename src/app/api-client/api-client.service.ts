@@ -3,6 +3,8 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable, of} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
+import {StatusBar} from '@ionic-native/status-bar/ngx';
+import {Globals} from '../globals';
 
 @Injectable({
     providedIn: 'root'
@@ -17,10 +19,10 @@ export class ApiClientService {
 
     protected tokenKey = 'token';
 
-    constructor(protected http: HttpClient) {}
+    constructor(protected http: HttpClient, private globals: Globals) {}
 
     setToken() {
-        this.headers[this.tokenKey] = localStorage.getItem('token');
+        this.headers[this.tokenKey] = this.globals.auth.TOKEN;
     }
 
     call<T>(method: string, url: string): Observable<T> {

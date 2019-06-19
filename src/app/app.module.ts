@@ -11,6 +11,7 @@ import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {Globals} from './globals';
 
+
 @NgModule({
     declarations: [AppComponent],
     entryComponents: [],

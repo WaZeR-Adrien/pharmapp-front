@@ -1,6 +1,6 @@
-import { Globals } from './global';
+import { Globals } from './globals';
 
-describe('Global', () => {
+describe('Globals', () => {
   it('should create an instance', () => {
     expect(new Globals()).toBeTruthy();
   });

@@ -1,12 +1,14 @@
 import {Injectable} from '@angular/core';
 import {ApiClientService} from '../api-client/api-client.service';
-import {Personne} from '../people/personne';
+import {Category} from './category';
 
 @Injectable({
     providedIn: 'root'
 })
-export class ContactService extends ApiClientService {
+export class CategoryService extends ApiClientService {
+
     getAll() {
-        return this.call<Personne[]>('GET', '/contacts');
+        return this.call<Category[]>('GET', '/categories');
     }
+
 }
