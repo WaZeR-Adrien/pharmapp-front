@@ -26,8 +26,10 @@ export class StatComponent implements OnInit {
         this.visitService.getByPeopleId(type, people.ID).subscribe(visits => {
             this.number = visits.length;
 
-            const lastVisit = visits[this.number - 1];
-            this.lastDate = lastVisit.DATE + ' ' + lastVisit.HEURE;
+            if (this.number > 0) {
+                const lastVisit = visits[this.number - 1];
+                this.lastDate = lastVisit.DATE + ' à ' + lastVisit.HEURE;
+            }
         });
     }
 }

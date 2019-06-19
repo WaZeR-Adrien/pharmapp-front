@@ -1,2 +1,2 @@
 <p> {{number}} visite(s) effectué(s) </p>
-<p>La dernière visite a été effectué le {{lastDate}}</p>
+<p *ngIf="number > 0">La dernière visite a été effectué le {{lastDate}}</p>
