@@ -29,18 +29,18 @@ export class CalcPage implements OnInit {
   }
 
   tauxForm() {
-    this.result1 = (1 - parseFloat(this.achnet) / parseFloat(this.achbrut)) * 100;
+    this.result1 = ((1 - parseFloat(this.achnet) / parseFloat(this.achbrut)) * 100).toFixed(2);
   }
 
   prixAchnet() {
-    this.result2 = (parseFloat(this.achbrut) * (1 - (parseFloat(this.remise) / 100)));
+    this.result2 = (parseFloat(this.achbrut) * (1 - (parseFloat(this.remise) / 100))).toFixed(2);
   }
 
   prixVentenet() {
-    this.result3 = (parseFloat(this.achnet) * parseFloat(this.coeff));
+    this.result3 = ((parseFloat(this.achnet) * parseFloat(this.coeff))).toFixed(2);
   }
 
   coeffMulti() {
-    this.result4 = (parseFloat(this.venteNet) * (1 - parseFloat(this.achnet)));
+    this.result4 = (parseFloat(this.venteNet) * (1 - parseFloat(this.achnet))).toFixed(2);
   }
 }
