@@ -5,13 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePage } from './home.page';
-import {LoginComponent} from '../login/login.component';
+import { ProductsPage } from './products.page';
+import {SearchPipe} from '../pipes/search.pipe';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePage
+    component: ProductsPage
   }
 ];
 
@@ -20,8 +20,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes),
+    RouterModule.forChild(routes)
   ],
-  declarations: [HomePage, LoginComponent]
+  declarations: [ProductsPage, SearchPipe]
 })
-export class HomePageModule {}
+export class ProductsPageModule {}
