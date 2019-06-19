@@ -5,13 +5,14 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {IonicModule} from '@ionic/angular';
 
-import {ProductsPage} from './products.page';
+import {CategoriesPage} from './categories.page';
 import {SearchPipe} from '../pipes/search.pipe';
+import {NgxMasonryModule} from 'ngx-masonry';
 
 const routes: Routes = [
     {
         path: '',
-        component: ProductsPage
+        component: CategoriesPage
     }
 ];
 
@@ -20,9 +21,10 @@ const routes: Routes = [
         CommonModule,
         FormsModule,
         IonicModule,
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
+        NgxMasonryModule
     ],
-    declarations: [ProductsPage, SearchPipe]
+    declarations: [CategoriesPage]
 })
-export class ProductsPageModule {
+export class CategoriesPageModule {
 }

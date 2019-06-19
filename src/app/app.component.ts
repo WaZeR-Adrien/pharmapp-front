@@ -28,8 +28,8 @@ export class AppComponent {
             icon: 'map'
         },
         {
-            title: 'Produits',
-            url: '/products',
+            title: 'Catégories & produits',
+            url: '/categories',
             icon: 'list-box'
         }
     ];
