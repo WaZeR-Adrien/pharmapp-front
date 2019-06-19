@@ -16,6 +16,12 @@
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" *ngIf="globals.auth != null">
+            <ion-item [routerDirection]="'root'" [routerLink]="''">
+              <ion-label type="submit" (click)="logout()" expand="block">Se déconnecter</ion-label>
+              <ion-icon slot="start" [name]="'exit'"></ion-icon>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-list>
       </ion-content>
     </ion-menu>
