@@ -11,10 +11,37 @@
 </ion-header>
 
 <ion-content>
-    <ion-item *ngFor="let product of products">
-        <ion-label>{{product.NOM}}</ion-label>
-        <ion-button slot="end">
-            <ion-icon name="calculator"></ion-icon>
-        </ion-button>
-    </ion-item>
+    <div *ngIf="!productsDisplayed">
+        <h3 class="loading">
+            <ion-spinner name="crescent" color="secondary"></ion-spinner>
+            <ion-text color="secondary">Chargement...</ion-text>
+        </h3>
+
+        <ion-item *ngFor="let item of [0, 1, 2, 3, 4, 5]">
+            <ion-label>
+                <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-label>
+            <ion-thumbnail slot="end">
+                <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-thumbnail>
+        </ion-item>
+    </div>
+
+    <div *ngIf="productsDisplayed">
+        <ion-searchbar [(ngModel)]="search" placeholder="Rechercher un produit..."></ion-searchbar>
+
+        <ion-item *ngFor="let product of productsDisplayed | search: 'NOM': search">
+            <ion-label>{{product.NOM}}</ion-label>
+            <ion-button slot="end">
+                <ion-icon name="calculator"></ion-icon>
+            </ion-button>
+        </ion-item>
+
+        <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+            <ion-infinite-scroll-content
+                    loadingSpinner="crescent"
+                    loadingText="Chargement des autres produits...">
+            </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </div>
 </ion-content>

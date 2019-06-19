@@ -6,6 +6,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {IonicModule} from '@ionic/angular';
 
 import {ProductsPage} from './products.page';
+import {SearchPipe} from '../pipes/search.pipe';
 
 const routes: Routes = [
     {
@@ -21,7 +22,7 @@ const routes: Routes = [
         IonicModule,
         RouterModule.forChild(routes)
     ],
-    declarations: [ProductsPage]
+    declarations: [ProductsPage, SearchPipe]
 })
 export class ProductsPageModule {
 }

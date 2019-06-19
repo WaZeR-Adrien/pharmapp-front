@@ -14,9 +14,7 @@ export class CategoriesPage implements OnInit {
 
     categories: Category[];
     categoriesDisplayed: Category[];
-
-    search: string;
-
+    
     constructor(private categoryService: CategoryService) {
     }
 
