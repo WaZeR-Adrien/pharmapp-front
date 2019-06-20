@@ -29,9 +29,9 @@
     </div>
 
     <div *ngIf="contactsDisplayed">
-        <ion-searchbar [(ngModel)]="search" placeholder="Rechercher par nom..."></ion-searchbar>
+        <ion-searchbar [(ngModel)]="search" placeholder="Rechercher un contact..."></ion-searchbar>
 
-        <ion-item *ngFor="let contact of contactsDisplayed | search: 'NOM': search">
+        <ion-item *ngFor="let contact of contactsDisplayed | filterBy: {$or: [ {NOM: search}, {PRENOM: search}, {EMAIL: search}, {VILLE: search} ]}">
             <ion-label>
                 <h2 class="name">{{contact.NOM}} {{contact.PRENOM}}</h2>
                 <h3>{{contact.EMAIL}}</h3>
