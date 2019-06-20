@@ -37,8 +37,8 @@ export class ProductsPage implements OnInit {
         setTimeout(() => {
             const length = this.productsDisplayed.length;
 
-            this.products.slice(length - 1, length + 9).forEach(category => {
-                this.productsDisplayed.push(category);
+            this.products.slice(length - 1, length + 9).forEach(product => {
+                this.productsDisplayed.push(product);
             });
 
             event.target.complete();
