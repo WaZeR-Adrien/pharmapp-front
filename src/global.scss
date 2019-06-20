@@ -12,12 +12,17 @@
 
 // Toolbar
 .img-toolbar {
-  display:inline-block;
-  float: right;
-  width: 60px;
+    display: inline-block;
+    float: right;
+    width: 60px;
 }
 
 .title-toolbar {
-  display:inline-block;
-  margin-top: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ios .title-toolbar {
+    display: inline-block;
 }
