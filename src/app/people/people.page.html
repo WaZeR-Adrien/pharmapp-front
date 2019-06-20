@@ -11,5 +11,60 @@
 </ion-header>
 
 <ion-content>
+    <ion-card>
+        <ion-list>
+            <ion-item>
+                <ion-label>Type</ion-label>
+                <ion-select placeholder="Type de personne" cancelText="Annuler" [(ngModel)]="type">
+                    <ion-select-option value="CONTACT">Contact</ion-select-option>
+                    <ion-select-option value="DMO">Dmo</ion-select-option>
+                    <ion-select-option value="ADMIN">Admin</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating" [(ngModel)]="name">Nom</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating" [(ngModel)]="firstName">Prénom</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating" [(ngModel)]="email">Email</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating" [(ngModel)]="address">Adresse</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="number" value="44000" [(ngModel)]="postalCode"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating" [(ngModel)]="city">Ville</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="date" [(ngModel)]="hiringDate"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating" [(ngModel)]="status">Statut</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-select placeholder="Responsable" cancelText="Annuler" [(ngModel)]="socialReason">
+                    <ion-select-option></ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>Responsable</ion-label>
+                <ion-select placeholder="Responsable" cancelText="Annuler" [(ngModel)]="responsible">
+                    <ion-select-option value="1">Oui</ion-select-option>
+                    <ion-select-option value="0">Non</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-button type="submit" (click)="add()" expand="block">Ajouter la personne</ion-button>
+        </ion-list>
+    </ion-card>
 
 </ion-content>
