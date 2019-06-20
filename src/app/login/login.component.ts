@@ -21,8 +21,9 @@ export class LoginComponent implements OnInit {
     login() {
         this.authService.login(this.email, this.password).then(auth => {
             localStorage.setItem('auth', JSON.stringify(auth));
-
             this.globals.auth = auth;
+            delete this.email;
+            delete this.password;
         });
     }
 }
