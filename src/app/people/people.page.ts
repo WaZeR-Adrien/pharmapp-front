@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PeopleService} from './people.service';
+import {Globals} from '../globals';
 
 @Component({
     selector: 'app-people',
@@ -20,7 +21,7 @@ export class PeoplePage implements OnInit {
     socialReason: string;
     responsible: string;
 
-    constructor(private peopleService: PeopleService) {
+    constructor(private peopleService: PeopleService, private globals: Globals) {
     }
 
     ngOnInit() {
@@ -45,5 +46,4 @@ export class PeoplePage implements OnInit {
 
         });
     }
-
 }

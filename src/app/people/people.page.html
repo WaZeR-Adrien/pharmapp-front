@@ -17,8 +17,8 @@
                 <ion-label>Type</ion-label>
                 <ion-select placeholder="Type de personne" cancelText="Annuler" [(ngModel)]="type">
                     <ion-select-option value="CONTACT">Contact</ion-select-option>
-                    <ion-select-option value="DMO">Dmo</ion-select-option>
-                    <ion-select-option value="ADMIN">Admin</ion-select-option>
+                    <ion-select-option value="DMO" *ngIf="globals.auth.PERSONNE.TYPE == 'ADMIN'">Dmo</ion-select-option>
+                    <ion-select-option value="ADMIN" *ngIf="globals.auth.PERSONNE.TYPE == 'ADMIN'">Admin</ion-select-option>
                 </ion-select>
             </ion-item>
             <ion-item>
