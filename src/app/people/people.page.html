@@ -58,10 +58,7 @@
             </ion-item>
             <ion-item>
                 <ion-label>Responsable</ion-label>
-                <ion-select placeholder="Responsable" cancelText="Annuler" [(ngModel)]="responsible">
-                    <ion-select-option value="1">Oui</ion-select-option>
-                    <ion-select-option value="0">Non</ion-select-option>
-                </ion-select>
+                <ion-checkbox></ion-checkbox>
             </ion-item>
             <ion-button type="submit" (click)="add()" expand="block">Ajouter la personne</ion-button>
         </ion-list>

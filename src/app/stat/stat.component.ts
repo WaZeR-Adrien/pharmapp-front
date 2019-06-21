@@ -16,7 +16,9 @@ export class StatComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.stats();
+        if (this.globals.auth.PERSONNE.TYPE === 'DMO') {
+            this.stats();
+        }
     }
 
     stats() {

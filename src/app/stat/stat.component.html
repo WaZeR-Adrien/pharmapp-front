@@ -1,2 +1,2 @@
-<p> {{number}} visite(s) effectué(s) </p>
+<p *ngIf="globals.auth.PERSONNE.TYPE == 'DMO'"> {{number}} visite(s) effectué(s) </p>
 <p *ngIf="number > 0">La dernière visite a été effectuée le {{lastDate}}</p>
