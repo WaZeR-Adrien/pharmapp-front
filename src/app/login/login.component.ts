@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../auth/auth.service';
 import {Globals} from '../globals';
 import {ToastController} from '@ionic/angular';
+import {ToastService} from '../toast/toast.service';
 
 @Component({
     selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
     constructor(
         private authService: AuthService,
         private globals: Globals,
-        private toastController: ToastController
+        private toastService: ToastService
     ) {
     }
 
@@ -33,16 +34,11 @@ export class LoginComponent implements OnInit {
             })
             .catch(err => {
                 if (err.error.message) {
-                    this.presentToast(err.error.message);
+                    this.toastService.presentToast({
+                        message: err.error.message,
+                        color: 'danger'
+                    });
                 }
             });
-    }
-
-    async presentToast(msg) {
-        const toast = await this.toastController.create({
-            message: msg,
-            duration: 2000
-        });
-        toast.present();
     }
 }
