@@ -10,7 +10,7 @@ export class ContactService extends ApiClientService {
     getById(id: number) {
         this.setToken();
 
-        return this.call<People>('GET', '/contacts/:id');
+        return this.call<People>('GET', '/contacts/' + id);
     }
 
     getAll() {
