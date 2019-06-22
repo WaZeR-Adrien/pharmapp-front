@@ -6,9 +6,17 @@ import {People} from '../people/people';
     providedIn: 'root'
 })
 export class ContactService extends ApiClientService {
+
+    getById(id: number) {
+        this.setToken();
+
+        return this.call<People>('GET', '/contacts/:id');
+    }
+
     getAll() {
         this.setToken();
 
         return this.call<People[]>('GET', '/contacts');
     }
+
 }
