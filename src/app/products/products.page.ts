@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ProductService} from './product.service';
 import {ActivatedRoute} from '@angular/router';
 import {Product} from './product';
+import {Globals} from '../globals';
 
 @Component({
     selector: 'app-products',
@@ -15,7 +16,7 @@ export class ProductsPage implements OnInit {
 
     search: string;
 
-    constructor(private productService: ProductService, private route: ActivatedRoute) {
+    constructor(private global: Globals, private productService: ProductService, private route: ActivatedRoute) {
     }
 
     ngOnInit() {
