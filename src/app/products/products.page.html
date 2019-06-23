@@ -11,6 +11,11 @@
 </ion-header>
 
 <ion-content>
+    <div class="btn">
+        <ion-button *ngIf="globals.auth.PERSONNE.TYPE == 'ADMIN'" [routerLink]="'/add-products'">
+            Ajouter un produit
+        </ion-button>
+    </div>
     <div *ngIf="!productsDisplayed">
         <h3 class="loading">
             <ion-spinner name="crescent" color="secondary"></ion-spinner>
