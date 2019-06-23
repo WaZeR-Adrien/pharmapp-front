@@ -27,6 +27,8 @@ export class AuthService extends ApiClientService {
                     }
 
                     return reject(false);
+                }, err => {
+                    return reject(err);
                 });
         });
     }

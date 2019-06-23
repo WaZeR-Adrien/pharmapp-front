@@ -30,7 +30,7 @@
     <div *ngIf="productsDisplayed">
         <ion-searchbar [(ngModel)]="search" placeholder="Rechercher un produit..."></ion-searchbar>
 
-        <ion-item *ngFor="let product of productsDisplayed | search: 'NOM': search">
+        <ion-item *ngFor="let product of productsDisplayed | filterBy: {NOM: search}">
             <ion-label>{{product.NOM}}</ion-label>
             <ion-button [routerDirection]="'root'" [routerLink]="'/calc'" [queryParams]="{prix: product.PRIX}" slot="end">
                 <ion-icon name="calculator"></ion-icon>
