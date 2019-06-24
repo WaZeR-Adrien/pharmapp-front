@@ -6,6 +6,17 @@
     padding: 15px;
 }
 
-.visit {
-    text-align: center;
+.fullwidth {
+    width: 100%;
+
+    .visit {
+        margin: 25px 0;
+        text-align: center;
+    }
+
+    .switch-text {
+        margin: 25px;
+        color: #35818b;
+        font-size: 14px;
+    }
 }

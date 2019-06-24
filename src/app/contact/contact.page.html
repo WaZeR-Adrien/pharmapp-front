@@ -16,18 +16,32 @@
         <h3>{{contact.STATUT}}</h3>
         <h4>{{contact.EMAIL}}</h4>
     </div>
-    <ion-list>
-        <ion-item>
-            <ion-label>Ville de {{contact.VILLE}} - {{contact.CP}}</ion-label>
-        </ion-item>
-        <ion-item>
-            <ion-label>Situé {{contact.ADRESSE}}</ion-label>
-        </ion-item>
-        <ion-item>
-            <ion-label>{{contact.ETRE_RESPONSABLE == 1 ? 'Est' : 'N\'est pas'}} responsable de sa structure</ion-label>
-        </ion-item>
-    </ion-list>
-    <div class="visit">
-        <ion-button>Préparer ma visite <ion-icon slot="end" name="pin"></ion-icon></ion-button>
-    </div>
+    <ion-slides [options]="slideOpts">
+        <ion-slide>
+            <div class="fullwidth">
+                <h2>Informations générales</h2>
+
+                <ion-list>
+                    <ion-item>
+                        <ion-label>Ville de {{contact.VILLE}} - {{contact.CP}}</ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Situé {{contact.ADRESSE}}</ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>{{contact.ETRE_RESPONSABLE == 1 ? 'Est' : 'N\'est pas'}} responsable de sa structure</ion-label>
+                    </ion-item>
+                </ion-list>
+
+                <div class="visit">
+                    <ion-button>Préparer ma visite <ion-icon slot="end" name="pin"></ion-icon></ion-button>
+                </div>
+
+                <p class="switch-text">Glissez vers la gauche pour lister les commandes réalisées par <i>{{contact.NOM}} {{contact.PRENOM}}</i></p>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <h2>Slide 2</h2>
+        </ion-slide>
+    </ion-slides>
 </ion-content>
