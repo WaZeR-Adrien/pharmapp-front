@@ -1,55 +1,46 @@
 <ion-header>
     <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
+        <ion-buttons slot="start" [routerLink]="'/categories'">
+            <ion-icon name="arrow-back" size="large"></ion-icon>
         </ion-buttons>
-        <ion-title>Produits</ion-title>
+        <img class="img-toolbar" src="assets/logo.png"/>
+        <ion-title class="title-toolbar">
+            Produits
+        </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <div *ngIf="!categoriesDisplayed">
+    <div class="btn">
+        <ion-button *ngIf="globals.auth.PERSONNE.TYPE == 'ADMIN'" [routerLink]="'/add-products'">
+            Ajouter un produit
+        </ion-button>
+    </div>
+    <div *ngIf="!productsDisplayed">
         <h3 class="loading">
             <ion-spinner name="crescent" color="secondary"></ion-spinner>
             <ion-text color="secondary">Chargement...</ion-text>
         </h3>
 
-        <ion-card *ngFor="let item of [0, 1, 2, 3]">
-            <ion-card-header>
-                <ion-card-title>
-                    <ion-skeleton-text animated style="width: 75%"></ion-skeleton-text>
-                </ion-card-title>
-                <ion-card-subtitle color="secondary">
-                    <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
-                </ion-card-subtitle>
-            </ion-card-header>
-            <ion-item *ngFor="let subItem of [0, 1, 2, 3]">
-                <ion-avatar slot="end">
-                    <ion-skeleton-text animated></ion-skeleton-text>
-                </ion-avatar>
-                <ion-label>
-                    <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
-                </ion-label>
-            </ion-item>
-        </ion-card>
+        <ion-item *ngFor="let item of [0, 1, 2, 3, 4, 5]">
+            <ion-label>
+                <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-label>
+            <ion-thumbnail slot="end">
+                <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-thumbnail>
+        </ion-item>
     </div>
 
-    <div *ngIf="categoriesDisplayed">
+    <div *ngIf="productsDisplayed">
         <ion-searchbar [(ngModel)]="search" placeholder="Rechercher un produit..."></ion-searchbar>
 
-        <ion-card *ngFor="let category of categoriesDisplayed">
-            <ion-card-header>
-                <ion-card-title>{{category.NOM}}</ion-card-title>
-                <ion-card-subtitle color="secondary">Produits : </ion-card-subtitle>
-            </ion-card-header>
-
-            <ion-item *ngFor="let product of category.PRODUITS | search: 'NOM': search">
-                <ion-label>{{product.NOM}}</ion-label>
-                <ion-button slot="end">
-                    <ion-icon name="calculator"></ion-icon>
-                </ion-button>
-            </ion-item>
-        </ion-card>
+        <ion-item *ngFor="let product of productsDisplayed | filterBy: {NOM: search}">
+            <ion-label>{{product.NOM}}</ion-label>
+            <ion-button [routerDirection]="'root'" [routerLink]="'/calc'" [queryParams]="{prix: product.PRIX}" slot="end">
+                <ion-icon name="calculator"></ion-icon>
+            </ion-button>
+        </ion-item>
 
         <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
             <ion-infinite-scroll-content

@@ -1,7 +1,8 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {Category} from './category';
-import {CategoryService} from './category.service';
-import {IonInfiniteScroll} from '@ionic/angular';
+import {Component, Input, OnInit} from '@angular/core';
+import {ProductService} from './product.service';
+import {ActivatedRoute} from '@angular/router';
+import {Product} from './product';
+import {Globals} from '../globals';
 
 @Component({
     selector: 'app-products',
@@ -10,40 +11,41 @@ import {IonInfiniteScroll} from '@ionic/angular';
 })
 export class ProductsPage implements OnInit {
 
-    @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
-
-    categories: Category[];
-    categoriesDisplayed: Category[];
+    products: Product[];
+    productsDisplayed: Product[];
 
     search: string;
 
-    constructor(private categoryService: CategoryService) {
+    constructor(private global: Globals, private productService: ProductService, private route: ActivatedRoute) {
     }
 
     ngOnInit() {
-        this.getAll();
+        this.route.queryParamMap
+            .subscribe(params => {
+                this.getById(params.get('categoryId'));
+            });
     }
 
-    getAll() {
-        this.categoryService.getAll().subscribe(categories => {
-            this.categories = categories;
-            this.categoriesDisplayed = categories.slice(0, 2);
+    getById(id: string) {
+        this.productService.getById(id).subscribe(products => {
+            this.products = products;
+            this.productsDisplayed = products.slice(0, 10);
         });
     }
 
     loadData(event) {
         setTimeout(() => {
-            const length = this.categoriesDisplayed.length;
+            const length = this.productsDisplayed.length;
 
-            this.categories.slice(length - 1, length + 1).forEach(category => {
-                this.categoriesDisplayed.push(category);
+            this.products.slice(length - 1, length + 9).forEach(product => {
+                this.productsDisplayed.push(product);
             });
 
             event.target.complete();
 
             // App logic to determine if all data is loaded
             // and disable the infinite scroll
-            if (this.categories.length === 1000) {
+            if (this.products.length === 1000) {
                 event.target.disabled = true;
             }
         }, 500);

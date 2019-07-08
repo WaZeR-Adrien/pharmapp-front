@@ -5,15 +5,12 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {IonicModule} from '@ionic/angular';
 
-import {ProductsPage} from './products.page';
-import {SearchPipe} from '../pipes/search.pipe';
-import {PipesModule} from '../pipes/pipes.module';
-import {FilterPipeModule} from 'ngx-filter-pipe';
+import {ContactPage} from './contact.page';
 
 const routes: Routes = [
     {
         path: '',
-        component: ProductsPage
+        component: ContactPage
     }
 ];
 
@@ -22,10 +19,9 @@ const routes: Routes = [
         CommonModule,
         FormsModule,
         IonicModule,
-        RouterModule.forChild(routes),
-        FilterPipeModule
+        RouterModule.forChild(routes)
     ],
-    declarations: [ProductsPage]
+    declarations: [ContactPage]
 })
-export class ProductsPageModule {
+export class ContactPageModule {
 }

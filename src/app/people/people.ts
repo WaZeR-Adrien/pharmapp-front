@@ -11,5 +11,5 @@ export class People {
     DATEEMBAUCHE: Date;
     STATUT: string;
     APPARTENIR_ID: number;
-    ETRE_RESPONSABLE_ID: number;
+    ETRE_RESPONSABLE: number;
 }

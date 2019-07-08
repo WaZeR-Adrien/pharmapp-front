@@ -1,14 +1,16 @@
 import {Component} from '@angular/core';
 
-import {Platform} from '@ionic/angular';
+import {MenuController, Platform} from '@ionic/angular';
 import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {Globals} from './globals';
+import {Router} from '@angular/router';
 
 
 @Component({
     selector: 'app-root',
-    templateUrl: 'app.component.html'
+    templateUrl: 'app.component.html',
+    styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
     public appPages = [
@@ -28,8 +30,8 @@ export class AppComponent {
             icon: 'map'
         },
         {
-            title: 'Produits',
-            url: '/products',
+            title: 'Catégories & produits',
+            url: '/categories',
             icon: 'list-box'
         }
     ];
@@ -38,7 +40,9 @@ export class AppComponent {
         private platform: Platform,
         private splashScreen: SplashScreen,
         private statusBar: StatusBar,
-        private globals: Globals
+        private globals: Globals,
+        private router: Router,
+        private menu: MenuController
     ) {
         this.initializeApp();
     }
@@ -50,5 +54,14 @@ export class AppComponent {
 
             this.globals.auth = JSON.parse(localStorage.getItem('auth'));
         });
+    }
+
+    logout() {
+        localStorage.removeItem('auth');
+        delete this.globals.auth;
+
+        this.router.navigate(['/']);
+
+        this.menu.close();
     }
 }
