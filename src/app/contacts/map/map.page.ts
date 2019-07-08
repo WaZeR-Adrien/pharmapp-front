@@ -56,8 +56,8 @@ export class MapPage implements OnInit {
                 const address = people.ADRESSE.replace(/\ /g, '%20');
                 const city = people.VILLE.replace(/\ /g, '%20');
                 this.http.get('https://api.mapbox.com/geocoding/v5/mapbox.places/' + address + '%20' + people.CP + '%20' + city + '.json?access_token=' + environment.accessToken + '&country=fr&types=address&limit=1').subscribe((responses) => {
-                    const lng = responses.features[0].geometry.coordinates[0];
-                    const lat = responses.features[0].geometry.coordinates[1];
+                    const lng = responses["features"][0]["geometry"]["coordinates"][0];
+                    const lat = responses["features"][0]["geometry"]["coordinates"][1];
                     this.markers = new mapboxgl.Marker()
                         .setLngLat([lng, lat])
                         .addTo(this.map);
