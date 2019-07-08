@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {People} from '../../people/people';
-import {ContactService} from '../contact.service';
+import {ContactService} from '../../contact/contact.service';
 
 @Component({
     selector: 'app-tab2',

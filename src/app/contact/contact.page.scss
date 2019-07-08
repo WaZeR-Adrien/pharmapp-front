@@ -1,0 +1,22 @@
+.main {
+    background: #7fcdff;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+}
+
+.fullwidth {
+    width: 100%;
+
+    .visit {
+        margin: 25px 0;
+        text-align: center;
+    }
+
+    .switch-text {
+        margin: 25px;
+        color: #35818b;
+        font-size: 14px;
+    }
+}
