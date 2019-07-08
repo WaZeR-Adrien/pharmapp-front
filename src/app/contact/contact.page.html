@@ -37,11 +37,24 @@
                     <ion-button>Préparer ma visite <ion-icon slot="end" name="pin"></ion-icon></ion-button>
                 </div>
 
-                <p class="switch-text">Glissez vers la gauche pour lister les commandes réalisées par <i>{{contact.NOM}} {{contact.PRENOM}}</i></p>
+                <p class="switch-text">Glissez vers la gauche pour lister les commandes réalisées par l'organisation de <i>{{contact.NOM}} {{contact.PRENOM}}</i></p>
             </div>
         </ion-slide>
         <ion-slide>
-            <h2>Slide 2</h2>
+            <div class="fullwidth">
+                <h2>Commandes</h2>
+
+                <ion-list>
+                    <ion-item *ngFor="let command of commands">
+                        <ion-label>
+                            <h3>{{command.DATE}}</h3>
+                            <p>{{command.QUANTITE}} produits commandés : {{command.PRIXTOTAL}} €</p>
+                        </ion-label>
+                    </ion-item>
+                </ion-list>
+
+                <p class="switch-text">Glissez vers la droite pour afficher les informations de <i>{{contact.NOM}} {{contact.PRENOM}}</i></p>
+            </div>
         </ion-slide>
     </ion-slides>
 </ion-content>
