@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" [routerLink]="'/organization'" [queryParams]="{id: contact.APPARTENIR_ID}">
+            <ion-icon name="arrow-back" size="large"></ion-icon>
+        </ion-buttons>
+        <img class="img-toolbar" src="assets/logo.png"/>
+        <ion-title class="title-toolbar">
+            <ng-container *ngIf="!contact">Chargement...</ng-container>
+            <ng-container *ngIf="contact">{{contact.NOM}} {{contact.PRENOM}}</ng-container>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="main">
+        <h3>{{contact.STATUT}}</h3>
+        <h4>{{contact.EMAIL}}</h4>
+    </div>
+    <ion-slides [options]="slideOpts">
+        <ion-slide>
+            <div class="fullwidth">
+                <h2>Informations générales</h2>
+
+                <ion-list>
+                    <ion-item>
+                        <ion-label>Ville de {{contact.VILLE}} - {{contact.CP}}</ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Situé {{contact.ADRESSE}}</ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>{{contact.ETRE_RESPONSABLE == 1 ? 'Est' : 'N\'est pas'}} responsable de sa structure</ion-label>
+                    </ion-item>
+                </ion-list>
+
+                <div class="visit">
+                    <ion-button>Préparer ma visite <ion-icon slot="end" name="pin"></ion-icon></ion-button>
+                </div>
+
+                <p class="switch-text">Glissez vers la gauche pour lister les commandes réalisées par l'organisation de <i>{{contact.NOM}} {{contact.PRENOM}}</i></p>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="fullwidth">
+                <h2>Commandes</h2>
+
+                <ion-list>
+                    <ion-item *ngFor="let command of commands">
+                        <ion-label>
+                            <h3>{{command.DATE}}</h3>
+                            <p>{{command.QUANTITE}} produits commandés : {{command.PRIXTOTAL}} €</p>
+                        </ion-label>
+                    </ion-item>
+                </ion-list>
+
+                <p class="switch-text">Glissez vers la droite pour afficher les informations de <i>{{contact.NOM}} {{contact.PRENOM}}</i></p>
+            </div>
+        </ion-slide>
+    </ion-slides>
+</ion-content>
