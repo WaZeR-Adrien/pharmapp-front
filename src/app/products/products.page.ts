@@ -16,7 +16,7 @@ export class ProductsPage implements OnInit {
 
     search: string;
 
-    constructor(private global: Globals, private productService: ProductService, private route: ActivatedRoute) {
+    constructor(private globals: Globals, private productService: ProductService, private route: ActivatedRoute) {
     }
 
     ngOnInit() {
