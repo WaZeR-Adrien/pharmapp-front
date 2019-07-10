@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import {MapService} from '../../contacts/map/map.service';
-import {ContactService} from '../contact.service';
+import {ContactService} from '../../contact/contact.service';
 
 import { HttpClient } from '@angular/common/http';
 import {forEach} from '@angular-devkit/schematics';
@@ -58,7 +58,7 @@ export class MapPage implements OnInit {
                 this.http.get('https://api.mapbox.com/geocoding/v5/mapbox.places/' + address + '%20' + people.CP + '%20' + city + '.json?access_token=' + environment.accessToken + '&country=fr&types=address&limit=1').subscribe((responses) => {
                     const lng = responses["features"][0]["geometry"]["coordinates"][0];
                     const lat = responses["features"][0]["geometry"]["coordinates"][1];
-                    this.markers = new mapboxgl.Marker()
+                    this.markers = new mapboxgl.Marker({color: 'red'})
                         .setLngLat([lng, lat])
                         .addTo(this.map);
                 });
