@@ -8,7 +8,7 @@ export class People {
     CP: number;
     VILLE: string;
     MDP: string;
-    DATEEMBAUCHE: Date;
+    DATEEMBAUCHE: string;
     STATUT: string;
     APPARTENIR_ID: number;
     ETRE_RESPONSABLE: number;

@@ -33,6 +33,11 @@ export class AppComponent {
             title: 'Catégories & produits',
             url: '/categories',
             icon: 'list-box'
+        },
+        {
+            title: 'Ajouter une personne',
+            url: '/people',
+            icon: 'add-circle'
         }
     ];
 
