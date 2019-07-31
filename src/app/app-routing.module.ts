@@ -7,6 +7,7 @@ const routes: Routes = [
     {path: '', loadChildren: './contacts/contacts.module#ContactsPageModule'},
     {path: 'products', loadChildren: './products/products.module#ProductsPageModule'},
     {path: 'categories', loadChildren: './products/categories.module#CategoriesPageModule'},  { path: 'contact', loadChildren: './contact/contact.module#ContactPageModule' },
+  { path: 'add-visit', loadChildren: './visit/add-visit/add-visit.module#AddVisitPageModule' },
 
 ];
 
